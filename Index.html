@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owoshishi Cross-Trades | Real Reviews</title>
+    <style>
+        :root {
+            --purple: #8a2be2;
+            --pink: #ff69b4;
+            --blue: #1e90ff;
+            --dark: #2f2f2f;
+            --light: #f8f9fa;
+            --green: #2ecc71;
+        }
+        
+        body {
+            font-family: 'Segoe UI', 'Roboto', -apple-system, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 25px;
+            background: linear-gradient(135deg, var(--purple), var(--pink));
+            color: white;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 20px rgba(138, 43, 226, 0.2);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--purple);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .reviews-container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .review {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .review:last-child {
+            border-bottom: none;
+        }
+        
+        .review-rating {
+            color: gold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+        
+        .review-content {
+            margin-bottom: 8px;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+        
+        .review-date {
+            color: #888;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .verified-badge {
+            color: var(--green);
+            font-size: 0.8rem;
+            margin-left: 8px;
+            font-weight: bold;
+        }
+        
+        .game-tag {
+            display: inline-block;
+            background: #e0e0e0;
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+        
+        .adopt-me { background: #FFD1DC; color: #D23D67; }
+        .jailbreak { background: #ADD8E6; color: #1E4B6B; }
+        .grow-garden { background: #C1E1C1; color: #2E8B57; }
+        .huzz-rng { background: #E6E6FA; color: #6A5ACD; }
+        
+        .review-system {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .review-form h3 {
+            margin-bottom: 15px;
+        }
+        
+        .rating-input {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .rating-star {
+            font-size: 1.5rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .rating-star:hover,
+        .rating-star.active {
+            color: gold;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            resize: vertical;
+            min-height: 100px;
+            margin-bottom: 15px;
+            font-family: inherit;
+        }
+        
+        .game-select {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .game-option {
+            padding: 5px 10px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            cursor: pointer;
+            font-size: 0.85rem;
+        }
+        
+        .game-option.selected {
+            background: var(--purple);
+            color: white;
+        }
+        
+        .submit-btn {
+            background: var(--purple);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background: var(--pink);
+            transform: translateY(-2px);
+        }
+        
+        .emoji {
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Owoshishi Cross-Trades</h1>
+            <div class="subtitle">The REAL tea from real traders 🍵</div>
+        </header>
+        
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">4.97★</div>
+                <div class="stat-label">Avg Rating</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">1K+</div>
+                <div class="stat-label">Trades Done</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">50+</div>
+                <div class="stat-label">Honest Reviews</div>
+            </div>
+        </div>
+        
+        <div class="reviews-container">
+            <h2>Reviews💯</h2>
+            
+            <!-- Review 1 -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">😱</span> OMG just traded my NFR Arctic for a Jailbreak Brulee and it was SO SMOOTH! Owoshishi's middleman had my back the whole time I THOUGHT HE WOULD SCAM GOING FIRST BUT HE DIDN'T. 10/10 would trust with my life 
+                </div>
+                <div class="review-date">
+                    2 hours ago <span class="verified-badge">✓ Verified Trade</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                    <span class="game-tag jailbreak">Jailbreak</span>
+                </div>
+            </div>
+            
+            <!-- Review 2 -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">👑</span> Bro I was SO scared to cross-trade my shadow dragon but the escrow system is LEGIT. Got my Huzz RNG mythic pet with zero stress
+                </div>
+                <div class="review-date">
+                    5 hours ago <span class="verified-badge">✓ High-Value</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                    <span class="game-tag huzz-rng">Huzz RNG</span>
+                </div>
+            </div>
+            
+            <!-- Review 3 -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">🙌</span> After getting scammed TWICE on Discord, this saved me! Traded Grow Garden rares for Adopt Me pets with no sketchy stuff
+                </div>
+                <div class="review-date">
+                    1 day ago <span class="verified-badge">✓ Cross-Game</span>
+                    <span class="game-tag grow-garden">Grow Garden</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                </div>
+            </div>
+            
+            <!-- Review 4 -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">🔥</span> The trade calculator is SO ACCURATE! Made sure my mega uni was fair for the Jailbreak Torpedo + adds. No lowballers here!
+                </div>
+                <div class="review-date">
+                    1 day ago <span class="verified-badge">✓ Verified</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                    <span class="game-tag jailbreak">Jailbreak</span>
+                </div>
+            </div>
+            
+            <!-- Review 5 -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">💎</span> My first cross-trade was scary but the mod walked me through EVERYTHING. Traded Pet Bling items for frost dragon safely!
+                </div>
+                <div class="review-date">
+                    2 days ago <span class="verified-badge">✓ First Trade</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                </div>
+            </div>
+            
+            <!-- Reviews 6-50 would continue in this style -->
+            
+            <!-- Sample of additional reviews -->
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">🤯</span> DID A 3-WAY TRADE! Adopt Me → Jailbreak → Grow Garden. The step-by-step system made it easy when it could've been messy
+                </div>
+                <div class="review-date">
+                    3 days ago <span class="verified-badge">✓ Complex Trade</span>
+                    <span class="game-tag adopt-me">Adopt Me</span>
+                    <span class="game-tag jailbreak">Jailbreak</span>
+                    <span class="game-tag grow-garden">Grow Garden</span>
+                </div>
+            </div>
+            
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">🧠</span> Pro tip: ONLY trade with Gold Tier members. Did 7 trades this week with zero issues. The rep system actually works!
+                </div>
+                <div class="review-date">
+                    4 days ago <span class="verified-badge">✓ Gold Tier</span>
+                </div>
+            </div>
+            
+            <div class="review">
+                <div class="review-rating">★★★★★</div>
+                <div class="review-content">
+                    <span class="emoji">🛡️</span> Someone tried to scam but Owoshishi's dispute team got my pets back within HOURS. They don't play around with scammers
+                </div>
+                <div class="review-date">
+                    1 week ago <span class="verified-badge">✓ Dispute Resolved</span>
+                </div>
+            </div>
+            
+            <!-- More reviews would continue here -->
+        </div>
+        
+        <div class="review-system">
+            <div class="review-form">
+                <h3>Add Your Review</h3>
+                <div class="rating-input">
+                    <span class="rating-star">★</span>
+                    <span class="rating-star">★</span>
+                    <span class="rating-star">★</span>
+                    <span class="rating-star">★</span>
+                    <span class="rating-star">★</span>
+                </div>
+                <textarea placeholder="Spill the tea... was your trade valid or nah?"></textarea>
+                <div class="game-select">
+                    <div class="game-option adopt-me">Adopt Me</div>
+                    <div class="game-option jailbreak">Jailbreak</div>
+                    <div class="game-option grow-garden">Grow Garden</div>
+                    <div class="game-option huzz-rng">Huzz RNG</div>
+                    <div class="game-option">Pet Sim X</div>
+                    <div class="game-option">MM2</div>
+                </div>
+                <button class="submit-btn">Post Review</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Star rating functionality
+        const stars = document.querySelectorAll('.rating-star');
+        stars.forEach((star, index) => {
+            star.addEventListener('click', () => {
+                stars.forEach((s, i) => {
+                    if (i <= index) {
+                        s.classList.add('active');
+                    } else {
+                        s.classList.remove('active');
+                    }
+                });
+            });
+        });
+        
+        // Game selection functionality
+        const gameOptions = document.querySelectorAll('.game-option');
+        gameOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                option.classList.toggle('selected');
+            });
+        });
+        
+        // Submit button functionality
+        const submitBtn = document.querySelector('.submit-btn');
+        submitBtn.addEventListener('click', () => {
+            alert('Thanks for your review!');
+        });
+    </script>
+</body>
+</html>
